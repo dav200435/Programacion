@@ -25,12 +25,12 @@ def addCita(tarea,fecha,prioridad):
 
 def borrarCita(tarea):
     citas_a_borrar = []
-    for cita in agenda:
-        if cita["tarea"] == tarea:
-            citas_a_borrar.append(cita)
+    for i in agenda:
+        if i["tarea"] == tarea:
+            citas_a_borrar.append(i)
     
     for cita in citas_a_borrar:
-        agenda.remove(cita)
+        agenda.remove(i)
 
 if __name__ == '__main__' :
     addCita ("tarea1","23/06/2023","alta")
