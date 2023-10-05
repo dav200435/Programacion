@@ -12,14 +12,13 @@ def ordenPrio():
     media = []
     baja = []
     for i in agenda:
-        match agenda:
-            case "1" if i["prioridad"] == "alta":
-                agenda[i].append = alta
-            case "2" if i["prioridad"] == "media":
-                agenda[i].append = media
-            case "3" if i["prioridad"] == "baja":
-                agenda[i].append = baja
-    print (alta+media+baja)
+         if i["prioridad"] == "alta":
+            agenda[i].append (alta)
+         if i["prioridad"] == "media":
+            agenda[i].append (media)
+         if i["prioridad"] == "baja":
+            agenda[i].append (baja)
+    return (alta+media+baja)
 
 def addTarea(citas ,tarea):
     citas["tarea"] = tarea
