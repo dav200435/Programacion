@@ -19,7 +19,7 @@ def comprobarLetra(letraJugador):
 def convertirpalabra(palabra):
     guiones = '_' * len(palabra)
     return guiones
-    
+
 
 def mostrar():
     print(letrasAdivinadas)
@@ -34,7 +34,7 @@ def perdedor():
         print("Habeis perdido. Si juegas solo eres muy triste para no acertarr tu propia palabra ve al medico para que te vean ese alzheimer")
         return True
     return False
-        
+
 while ((victoria() == False) and (perdedor() == False)):
     victoria()
     perdedor()
