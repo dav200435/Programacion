@@ -6,19 +6,23 @@ citas ={
     "prioridad":""
 }
 agenda = []
-
+alta = []
+media = []
+baja = []
+prioridades = []
 def ordenPrio():
-    alta = []
-    media = []
-    baja = []
+
     for i in agenda:
-         if i["prioridad"] == "alta":
-            agenda[i].append (alta)
+         if i["prioridad"] == "alta": #toca cita con "prioridad" = "alta"
+            alta.append(i)#añade la cita en la lista llamada alta
          if i["prioridad"] == "media":
-            agenda[i].append (media)
+            media.append(i)
          if i["prioridad"] == "baja":
-            agenda[i].append (baja)
-    return (alta+media+baja)
+            baja.append(i)
+    prioridades.append(alta)#añañdir en orden a la lista prioridad
+    prioridades.append(media)
+    prioridades.append(baja)
+    #return prioridades
 
 def addTarea(citas ,tarea):
     citas["tarea"] = tarea
@@ -65,11 +69,11 @@ def buscarCita(tarea):
             print (i["tarea"])
             print (i["fecha"])
             print (i["prioridad"])
-    
+
 
 if __name__ == '__main__' :
     salir = True
-    while (salir == True):
+    while salir:
         salir = menu()
         match salir:
             case "1":
@@ -91,8 +95,10 @@ if __name__ == '__main__' :
                 os.system ("cls")
             case "4":
                 ordenPrio()
+                print (prioridades)
                 input ("-------------------------pulsa enter------------------------------")
                 os.system("cls")    
             case "5":
                 salir = False
                 os.system ("cls")
+                #sys.exit()

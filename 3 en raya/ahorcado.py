@@ -17,12 +17,13 @@ def comprobarLetra(letraJugador):
         print("Esa letra no está en la palabra. Te quedan", str(contadorInverso), "intentos.")
 
 def convertirpalabra(palabra):
-    guiones = '_' * len(palabra)
-    return guiones
+    palabraIncognita = '_' * len(palabra)
+    return palabraIncognita
 
 
 def mostrar():
     print(letrasAdivinadas)
+    convertirpalabra()
 
 def victoria():
     if (palabra == palabraIncognita):
