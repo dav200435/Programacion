@@ -1,10 +1,9 @@
-import sys
 import os
 user_Amount = 0
 user_Fill = 0
 user_Returt = 0
 def menu():
-    print("------------------------cita--------------------------")
+    print("------------------------Bienvenido--------------------------")
     print ("")
     print("1. Hacer ingreso")
     print("2. Hacer retiro")
@@ -12,7 +11,7 @@ def menu():
     print("4. cerrar sesión")
     print("_____________________________________________________")
     print ("")
-    return input("que quieres hacer --> ")
+    return input("que desea hacer --> ")
 if __name__ == '__main__' :
     salir = True
     while salir:
