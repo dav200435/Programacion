@@ -7,7 +7,7 @@ def visualizar ():
 def anadirValor (posicion,valor):
     cuadricula[posicion-1] = valor
 
-def comprobar(posicion,valor):
+def comprobar(posicion,):
     if (cuadricula[posicion-1] != " "):
         return False
     return True
