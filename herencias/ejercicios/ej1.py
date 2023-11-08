@@ -12,7 +12,7 @@ class profesor(persona):
     def profesor(self):
         print(f"nombre " + {self.nombre} + " edad "+{self.edad}+" dni "+{self.dni} +" numero de empleado "+{self.numEmpleado})
 
-class Estudiante(Persona):
+class Estudiante(persona):
    
     def __init__(self, matricula):
         self.matricula = matricula
