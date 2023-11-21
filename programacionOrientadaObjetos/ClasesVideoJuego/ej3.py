@@ -7,7 +7,7 @@ class Habilidad(ABC):
 
 class AtaqueFisico(Habilidad):
     def ejecutar(self):
-        print("ataca.")
+        print("ataca")
 
 class AtaqueMagico(Habilidad):
     def ejecutar(self):
