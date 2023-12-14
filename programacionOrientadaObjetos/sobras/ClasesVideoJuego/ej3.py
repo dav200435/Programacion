@@ -11,7 +11,7 @@ class AtaqueFisico(Habilidad):
 
 class AtaqueMagico(Habilidad):
     def ejecutar(self):
-        print("Bola de fuego")
+        print("Bolo du fogo")
 
 class Curar(Habilidad):
     def ejecutar(self):
