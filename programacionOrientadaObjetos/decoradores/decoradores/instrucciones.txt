@@ -1,0 +1,4 @@
+Crea uan clase cuentaBancaria atributos titular/obligatorio cantidad/noObligatorio
+constructor datos vacios gatter, setter y str ingresar y retirar no numeros rojos cantidad como atributos 
+
+subirlo a github pasar link
