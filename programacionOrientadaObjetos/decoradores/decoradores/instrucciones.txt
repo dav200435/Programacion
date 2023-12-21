@@ -1,4 +1,5 @@
-Crea uan clase cuentaBancaria atributos titular/obligatorio cantidad/noObligatorio
-constructor datos vacios gatter, setter y str ingresar y retirar no numeros rojos cantidad como atributos 
-
-subirlo a github pasar link
+cuenta King hereda cuentaBancaria titular,cantidad,bonificación por meter dinero te dan porcentaje expresado en %
+constructor, getter y setter de bonificación
+Tiene que ser mayor de edad metodo esTitularValido True si es mayor menor de 25
+solo se podra retirar si el titular es valido
+str mostrar
