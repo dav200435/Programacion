@@ -1,5 +1,4 @@
 import socket
-import keyboard as kb
 
 class server:
     
@@ -13,7 +12,7 @@ class server:
         self.server_socket.bind((self.host,self.port))
         
         #cuantos clientes espera como maximo
-        self.server_socket.listen(5)
+        self.server_socket.listen(2)
         
         self.con,self.adress =self.server_socket.accept()
         
@@ -24,15 +23,13 @@ class server:
         while True:
             datos=self.con.recv(1024).decode()
         
-            if datos == "exit":
+            if mensaje.lower() == "exit":
                 break
         
             print(f"Enviado desde cliente: {datos}")
+            mensaje = input("-> ")
         
-            if kb.is_pressed("t"):
-                mensaje = input("-> ")
-        
-            self.con.send(datos.encode())
+            self.con.send(mensaje.encode())
         
         self.con.close()
         
