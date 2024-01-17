@@ -27,7 +27,6 @@ class Client(Cliente):
     def run(self):
         self.socketCliente.connect((self.host, self.port))
         while True:
-            self.socketCliente.send(str(pyautogui.position()).encode())
             try:
                 datos = self.socketCliente.recv(1024).decode()
                 print(f"Servidor: {datos}")
