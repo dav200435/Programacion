@@ -1,42 +1,44 @@
 class cuentaBancaria:
     def __init__(self,titular=None,cantidad=0):
-        self.__titular = titular
-        self.__cantidad = cantidad
+        self._titular = titular
+        self._cantidad = cantidad
 
 
     @property
     def titular(self):
-        return self.__titular
+        return self._titular
     
     @titular.setter
     def titular(self,nombre):
-        self.__titular = nombre
+        self._titular = nombre
     
     @property
     def cantidad(self):
-        return self.__cantidad
+        return self._cantidad
     
     @cantidad.setter
     def cantidad(self,cantidad):
-        self.__cantidad = cantidad
+        self._cantidad = cantidad
 
     def __str__(self):
-        return str(self.__titular) + " " + str(self.__cantidad)
+        return str(self._titular) + " " + str(self._cantidad)
     
     def ingreso(self,cantidad):
-        if self.__titular != None:
-            if cantidad>0:
-                self.__cantidad += cantidad
+        if self._titular != None and cantidad>0:
+            self._cantidad += cantidad
     
     
     def retiro(self,cantidad):
-        if self.__titular != None:
-            if cantidad>0 and cantidad<=self.cantidad:
-                self.__cantidad -= cantidad
+        if self._titular != None and cantidad>0 and cantidad<=self.cantidad:
+            self._cantidad -= cantidad
 
 
 
 titular1 = cuentaBancaria()
+print(titular1)
+titular1.ingreso(15)
+print(titular1)
+titular1.titular = "hola"
 print(titular1)
 titular1.ingreso(15)
 print(titular1)
