@@ -7,24 +7,14 @@ class Cliente:
         self.socketCliente = socket.socket()
 
     def conectar(self):
-        self.socketCliente.connect((self.host, self.port))
-
-    def detect_k(self, key):
-        return key
-
+        self.socketCliente.connect((self.host,self.port))
+        
     def correr(self):
         self.conectar()
-        mensaje = ""
-        while mensaje.lower() != "exit":
+        mensaje=""
+        while mensaje.lower()!="exit":
             mensaje = input("-> ")
             self.socketCliente.send(mensaje.encode())
-            datos = self.socketCliente.recv(1024).decode()
-            print(f"Mensaje del servidor: {datos}")
-
-            if mensaje.lower() == "exit":
-                break
-
+            datos=self.socketCliente.recv(1024).decode()
+            print(f"Mensaje del server: {datos}")
         self.socketCliente.close()
-
-client = Cliente()
-client.correr()

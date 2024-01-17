@@ -17,14 +17,11 @@ class Server:
 
         while True:
             datos = self.con.recv(1024).decode()
+            print(f"Enviado desde cliente: {datos}")
             mensaje = input("-> ")
             self.con.send(mensaje.encode())
-            print(f"Enviado desde cliente: {datos}")
-
+            
             if datos.lower() == "exit":
                 break
 
         self.con.close()
-
-serv = Server()
-serv.correr()
