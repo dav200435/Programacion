@@ -1,0 +1,3 @@
+nombre;apellido;dni
+Dario;Arroyo;111111111G
+Mario;Serradilla;222222222T
