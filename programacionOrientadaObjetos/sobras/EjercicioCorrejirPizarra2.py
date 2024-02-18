@@ -16,7 +16,7 @@ print(mi_perro.pelo)
 
 
 class AnimalMal:
-    def __init__(self,nombre) #faltan los :
+    def __init__(self,nombre): #faltan los :
         self.nombre = nombre
     def hacer_sonido(self):
         print("Haciendo sonido")
