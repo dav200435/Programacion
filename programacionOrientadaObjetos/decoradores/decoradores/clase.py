@@ -54,7 +54,7 @@ try:
     persona1.dni="12345678J"
 except ValueError as e:
     print(e)
-persona1.dni = ""
+persona1.dni = "321456987S"
 persona1.edad=19
 persona1.nombre="Dario"
 print(persona1)
