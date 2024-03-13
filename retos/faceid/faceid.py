@@ -4,7 +4,7 @@ import numpy as np
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 import time
-import random
+import loginInfo
 
 
 def main():
