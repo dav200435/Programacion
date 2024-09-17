@@ -33,4 +33,4 @@ plt.tight_layout()  # Adjust layout to prevent overlap
 plt.show()
 #muertes anuales
 muertesAnuales=dfHurricanes.groupby("years")['deaths'].sum()
-plt.show 
+plt.show()
