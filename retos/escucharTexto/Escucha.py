@@ -2,6 +2,7 @@
 # speech to text and text to speech
 import speech_recognition as sr
 import pyttsx3
+import pyaudio
 # Initialize the recognizer
 r = sr.Recognizer()
 # Function to convert text to
@@ -34,7 +35,7 @@ while(1):
             audio2 = r.listen(source2)
              
             # Using google to recognize audio
-            MyText = r.recognize_google(audio2, language="es-CO")
+            MyText = r.recognize_google(audio2, language="es-ES")
             MyText = MyText.lower()
             file.write(MyText)
             file.write("\n")
